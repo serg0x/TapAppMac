@@ -13,6 +13,7 @@
 		75F049212A522A0200CA58F0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75F049202A522A0200CA58F0 /* Preview Assets.xcassets */; };
 		75F049292A522BA300CA58F0 /* ApplicationMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F049282A522BA300CA58F0 /* ApplicationMenu.swift */; };
 		75F0492B2A52322700CA58F0 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 75F0492A2A52322700CA58F0 /* Credits.rtf */; };
+		75F0492D2A55A7A700CA58F0 /* MyBonjourServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F0492C2A55A7A700CA58F0 /* MyBonjourServer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		75F049222A522A0200CA58F0 /* TapAppMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TapAppMac.entitlements; sourceTree = "<group>"; };
 		75F049282A522BA300CA58F0 /* ApplicationMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationMenu.swift; sourceTree = "<group>"; };
 		75F0492A2A52322700CA58F0 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		75F0492C2A55A7A700CA58F0 /* MyBonjourServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBonjourServer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		75F049182A522A0100CA58F0 /* TapAppMac */ = {
 			isa = PBXGroup;
 			children = (
+				75F0492C2A55A7A700CA58F0 /* MyBonjourServer.swift */,
 				75F049192A522A0100CA58F0 /* TapAppMacApp.swift */,
 				75F0491B2A522A0100CA58F0 /* ContentView.swift */,
 				75F049282A522BA300CA58F0 /* ApplicationMenu.swift */,
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75F0491C2A522A0100CA58F0 /* ContentView.swift in Sources */,
+				75F0492D2A55A7A700CA58F0 /* MyBonjourServer.swift in Sources */,
 				75F049292A522BA300CA58F0 /* ApplicationMenu.swift in Sources */,
 				75F0491A2A522A0100CA58F0 /* TapAppMacApp.swift in Sources */,
 			);

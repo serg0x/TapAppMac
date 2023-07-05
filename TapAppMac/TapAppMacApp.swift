@@ -19,6 +19,7 @@ struct TapAppMacApp: App {
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     static private(set) var instance: AppDelegate!
+    var bonjourServer: MyBonjourServer?
     lazy var statusBarItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     let menu = ApplicationMenu()
     
@@ -26,5 +27,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         AppDelegate.instance = self
         statusBarItem.button?.title = "LMU PML"
         statusBarItem.menu = menu.createMenu()
+        let bonjourServer = MyBonjourServer()
     }
 }
