@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75ACA67D2A55D07B0005327C /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ACA67C2A55D07B0005327C /* Server.swift */; };
 		75F0491A2A522A0100CA58F0 /* TapAppMacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F049192A522A0100CA58F0 /* TapAppMacApp.swift */; };
 		75F0491C2A522A0100CA58F0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F0491B2A522A0100CA58F0 /* ContentView.swift */; };
 		75F0491E2A522A0200CA58F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75F0491D2A522A0200CA58F0 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		75ACA67C2A55D07B0005327C /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		75F049162A522A0100CA58F0 /* TapAppMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapAppMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75F049192A522A0100CA58F0 /* TapAppMacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapAppMacApp.swift; sourceTree = "<group>"; };
 		75F0491B2A522A0100CA58F0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 		75F049182A522A0100CA58F0 /* TapAppMac */ = {
 			isa = PBXGroup;
 			children = (
+				75ACA67C2A55D07B0005327C /* Server.swift */,
 				75F049192A522A0100CA58F0 /* TapAppMacApp.swift */,
 				75F0491B2A522A0100CA58F0 /* ContentView.swift */,
 				75F049282A522BA300CA58F0 /* ApplicationMenu.swift */,
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75ACA67D2A55D07B0005327C /* Server.swift in Sources */,
 				75F0491C2A522A0100CA58F0 /* ContentView.swift in Sources */,
 				75F049292A522BA300CA58F0 /* ApplicationMenu.swift in Sources */,
 				75F0491A2A522A0100CA58F0 /* TapAppMacApp.swift in Sources */,
