@@ -13,6 +13,9 @@
 		75F049212A522A0200CA58F0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75F049202A522A0200CA58F0 /* Preview Assets.xcassets */; };
 		75F049292A522BA300CA58F0 /* ApplicationMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F049282A522BA300CA58F0 /* ApplicationMenu.swift */; };
 		75F0492B2A52322700CA58F0 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 75F0492A2A52322700CA58F0 /* Credits.rtf */; };
+		B75189152A55B95D0041D088 /* Bonjour in Frameworks */ = {isa = PBXBuildFile; productRef = B75189142A55B95D0041D088 /* Bonjour */; };
+		B75189172A55C6300041D088 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75189162A55C6300041D088 /* NetworkManager.swift */; };
+		B79C34572A55E3FA00273482 /* Communicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79C34562A55E3FA00273482 /* Communicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,8 @@
 		75F049222A522A0200CA58F0 /* TapAppMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TapAppMac.entitlements; sourceTree = "<group>"; };
 		75F049282A522BA300CA58F0 /* ApplicationMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationMenu.swift; sourceTree = "<group>"; };
 		75F0492A2A52322700CA58F0 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		B75189162A55C6300041D088 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		B79C34562A55E3FA00273482 /* Communicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Communicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B75189152A55B95D0041D088 /* Bonjour in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +69,8 @@
 				75F0491D2A522A0200CA58F0 /* Assets.xcassets */,
 				75F049222A522A0200CA58F0 /* TapAppMac.entitlements */,
 				75F0491F2A522A0200CA58F0 /* Preview Content */,
+				B75189162A55C6300041D088 /* NetworkManager.swift */,
+				B79C34562A55E3FA00273482 /* Communicator.swift */,
 			);
 			path = TapAppMac;
 			sourceTree = "<group>";
@@ -91,6 +99,9 @@
 			dependencies = (
 			);
 			name = TapAppMac;
+			packageProductDependencies = (
+				B75189142A55B95D0041D088 /* Bonjour */,
+			);
 			productName = TapAppMac;
 			productReference = 75F049162A522A0100CA58F0 /* TapAppMac.app */;
 			productType = "com.apple.product-type.application";
@@ -119,6 +130,9 @@
 				Base,
 			);
 			mainGroup = 75F0490D2A522A0100CA58F0;
+			packageReferences = (
+				B75189132A55B95D0041D088 /* XCRemoteSwiftPackageReference "bonjour" */,
+			);
 			productRefGroup = 75F049172A522A0100CA58F0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -146,8 +160,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B79C34572A55E3FA00273482 /* Communicator.swift in Sources */,
 				75F0491C2A522A0100CA58F0 /* ContentView.swift in Sources */,
 				75F049292A522BA300CA58F0 /* ApplicationMenu.swift in Sources */,
+				B75189172A55C6300041D088 /* NetworkManager.swift in Sources */,
 				75F0491A2A522A0100CA58F0 /* TapAppMacApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,7 +294,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TapAppMac/Preview Content\"";
-				DEVELOPMENT_TEAM = UUNX4ZR439;
+				DEVELOPMENT_TEAM = 9AU33YWN79;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -306,7 +322,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TapAppMac/Preview Content\"";
-				DEVELOPMENT_TEAM = UUNX4ZR439;
+				DEVELOPMENT_TEAM = 9AU33YWN79;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -346,6 +362,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B75189132A55B95D0041D088 /* XCRemoteSwiftPackageReference "bonjour" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/eugenebokhan/bonjour.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B75189142A55B95D0041D088 /* Bonjour */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B75189132A55B95D0041D088 /* XCRemoteSwiftPackageReference "bonjour" */;
+			productName = Bonjour;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 75F0490E2A522A0100CA58F0 /* Project object */;
 }

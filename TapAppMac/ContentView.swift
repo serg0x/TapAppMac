@@ -7,20 +7,39 @@
 
 import SwiftUI
 
+let url = URL(string: "10.163.181.83")!
+let communicator = TCP_Communicator(url: url, port: 12234)
+
+
 struct ContentView: View {
+    @State private var id: String = url.formatted()
+    @State private var connectionStatus: String = "Not connected"
+   
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
-    }
-}
+            
+            Text("ID: \(id)")
+                .padding()
+            
+            Text("Status: \(connectionStatus)")
+                .padding()
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+            Button("Connect", action: {
+                communicator.connect()
+            })
+            Button("Send", action: {
+                communicator.send(message: "He")
+            })
+            Button("Stream", action: {
+                //communicator.stream(<#T##aStream: Stream##Stream#>, handle: <#T##Stream.Event#>)
+            })
+            
+            .padding()
+        }
     }
+    
+
 }
