@@ -13,6 +13,8 @@
 		75F049212A522A0200CA58F0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75F049202A522A0200CA58F0 /* Preview Assets.xcassets */; };
 		75F049292A522BA300CA58F0 /* ApplicationMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F049282A522BA300CA58F0 /* ApplicationMenu.swift */; };
 		75F0492B2A52322700CA58F0 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 75F0492A2A52322700CA58F0 /* Credits.rtf */; };
+		893283802A56451200CC000A /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8932837F2A56451200CC000A /* Server.swift */; };
+		893283822A5645BD00CC000A /* ServerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893283812A5645BD00CC000A /* ServerConnection.swift */; };
 		B75189172A55C6300041D088 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75189162A55C6300041D088 /* NetworkManager.swift */; };
 		B79C34572A55E3FA00273482 /* Communicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79C34562A55E3FA00273482 /* Communicator.swift */; };
 /* End PBXBuildFile section */
@@ -26,6 +28,8 @@
 		75F049222A522A0200CA58F0 /* TapAppMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TapAppMac.entitlements; sourceTree = "<group>"; };
 		75F049282A522BA300CA58F0 /* ApplicationMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationMenu.swift; sourceTree = "<group>"; };
 		75F0492A2A52322700CA58F0 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		8932837F2A56451200CC000A /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		893283812A5645BD00CC000A /* ServerConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConnection.swift; sourceTree = "<group>"; };
 		B75189162A55C6300041D088 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		B79C34562A55E3FA00273482 /* Communicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Communicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,6 +73,8 @@
 				75F0491F2A522A0200CA58F0 /* Preview Content */,
 				B75189162A55C6300041D088 /* NetworkManager.swift */,
 				B79C34562A55E3FA00273482 /* Communicator.swift */,
+				8932837F2A56451200CC000A /* Server.swift */,
+				893283812A5645BD00CC000A /* ServerConnection.swift */,
 			);
 			path = TapAppMac;
 			sourceTree = "<group>";
@@ -159,7 +165,9 @@
 				B79C34572A55E3FA00273482 /* Communicator.swift in Sources */,
 				75F0491C2A522A0100CA58F0 /* ContentView.swift in Sources */,
 				75F049292A522BA300CA58F0 /* ApplicationMenu.swift in Sources */,
+				893283822A5645BD00CC000A /* ServerConnection.swift in Sources */,
 				B75189172A55C6300041D088 /* NetworkManager.swift in Sources */,
+				893283802A56451200CC000A /* Server.swift in Sources */,
 				75F0491A2A522A0100CA58F0 /* TapAppMacApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,7 +298,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TapAppMac/Preview Content\"";
-				DEVELOPMENT_TEAM = UUNX4ZR439;
+				DEVELOPMENT_TEAM = V4L927T7JV;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -300,6 +308,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.lmu.TapAppMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -318,7 +327,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TapAppMac/Preview Content\"";
-				DEVELOPMENT_TEAM = UUNX4ZR439;
+				DEVELOPMENT_TEAM = V4L927T7JV;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -328,6 +337,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.lmu.TapAppMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -12,7 +12,7 @@ let communicator = TCP_Communicator(url: url, port: 12234)
 
 
 struct ContentView: View {
-    @State private var id: String = url.formatted()
+    @State private var id: String = url.path
     @State private var connectionStatus: String = "Not connected"
    
     var body: some View {
@@ -21,23 +21,23 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
             
-            Text("ID: \(id)")
-                .padding()
-            
-            Text("Status: \(connectionStatus)")
-                .padding()
-
-            Button("Connect", action: {
-                communicator.connect()
-            })
-            Button("Send", action: {
-                communicator.send(message: "He")
-            })
-            Button("Stream", action: {
-                //communicator.stream(<#T##aStream: Stream##Stream#>, handle: <#T##Stream.Event#>)
-            })
-            
-            .padding()
+//            Text("ID: \(id)")
+//                .padding()
+//            
+//            Text("Status: \(connectionStatus)")
+//                .padding()
+//
+//            Button("Connect", action: {
+//                communicator.connect()
+//            })
+//            Button("Send", action: {
+//                communicator.send(message: "He")
+//            })
+//            Button("Stream", action: {
+//                //communicator.stream(<#T##aStream: Stream##Stream#>, handle: <#T##Stream.Event#>)
+//            })
+//            
+//            .padding()
         }
     }
     

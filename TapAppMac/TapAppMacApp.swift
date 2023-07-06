@@ -33,10 +33,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         AppDelegate.instance = self
         statusBarItem.button?.title = "LMU PML"
         statusBarItem.menu = menu.createMenu()
+        initServer(port: 8888)
+        
         
         //let network = NetworkManager(host: "",port: 1234)
         
         
+    }
+    
+    func initServer(port: UInt16) {
+        let server = Server(port: port)
+        try! server.start()
     }
     
     
