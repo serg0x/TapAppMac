@@ -15,6 +15,7 @@
 		75F0492B2A52322700CA58F0 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 75F0492A2A52322700CA58F0 /* Credits.rtf */; };
 		893283802A56451200CC000A /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8932837F2A56451200CC000A /* Server.swift */; };
 		893283822A5645BD00CC000A /* ServerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893283812A5645BD00CC000A /* ServerConnection.swift */; };
+		89C4AE922A57215F0043EEB4 /* ServiceAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C4AE912A57215F0043EEB4 /* ServiceAgent.swift */; };
 		B75189172A55C6300041D088 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75189162A55C6300041D088 /* NetworkManager.swift */; };
 		B79C34572A55E3FA00273482 /* Communicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79C34562A55E3FA00273482 /* Communicator.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +31,7 @@
 		75F0492A2A52322700CA58F0 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		8932837F2A56451200CC000A /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		893283812A5645BD00CC000A /* ServerConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConnection.swift; sourceTree = "<group>"; };
+		89C4AE912A57215F0043EEB4 /* ServiceAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAgent.swift; sourceTree = "<group>"; };
 		B75189162A55C6300041D088 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		B79C34562A55E3FA00273482 /* Communicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Communicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,6 +77,7 @@
 				B79C34562A55E3FA00273482 /* Communicator.swift */,
 				8932837F2A56451200CC000A /* Server.swift */,
 				893283812A5645BD00CC000A /* ServerConnection.swift */,
+				89C4AE912A57215F0043EEB4 /* ServiceAgent.swift */,
 			);
 			path = TapAppMac;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				75F049292A522BA300CA58F0 /* ApplicationMenu.swift in Sources */,
 				893283822A5645BD00CC000A /* ServerConnection.swift in Sources */,
 				B75189172A55C6300041D088 /* NetworkManager.swift in Sources */,
+				89C4AE922A57215F0043EEB4 /* ServiceAgent.swift in Sources */,
 				893283802A56451200CC000A /* Server.swift in Sources */,
 				75F0491A2A522A0100CA58F0 /* TapAppMacApp.swift in Sources */,
 			);

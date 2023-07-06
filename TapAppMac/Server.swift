@@ -9,10 +9,11 @@ import Foundation
 import Network
 
 @available(macOS 10.14, *)
-class Server {
+class Server : NSObject {
     let port: NWEndpoint.Port
     let listener: NWListener
     private var isConnected: Bool
+    private var keepRunning: Bool
     
     private var connectionsByID: [Int: ServerConnection] = [:]
 
@@ -20,7 +21,10 @@ class Server {
         self.port = NWEndpoint.Port(rawValue: port)!
         listener = try! NWListener(using: .tcp, on: self.port)
         isConnected = false
+        keepRunning = true
+        super.init()
         self.registerService()
+        
     }
 
     func start() throws {
@@ -77,18 +81,52 @@ class Server {
             connection.stop()
         }
         self.connectionsByID.removeAll()
+        self.keepRunning = false
     }
     
     private func registerService() {
-        let service = NetService(domain: "",
-                                 type: "_tapapp._tcp.",
-                                 name: Host.current().name!,
-                                 port: Int32(self.port.rawValue))
-        print(Host.current().name!)
-        print(Int32(self.port.rawValue))
-        service.publish()
+        if let ipAddress = extractIPAddress(from: Host.current().addresses) {
+            print(ipAddress)
+            print(Int32(self.port.rawValue))
+
+            let agent = ServiceAgent()
+            let runloop = RunLoop.main
+            let service = NetService(domain: "local.", type: "_tapapp._tcp", name: "tapApp", port: Int32(self.port.rawValue))
+            service.schedule(in: runloop, forMode: .common)
+            service.delegate = agent
+            let dictData: [String: Data] = ["ip": ipAddress.data(using: .utf8)!, "port": String(Int32(self.port.rawValue)).data(using: .utf8)!]
+            let data = NetService.data(fromTXTRecord: dictData)
+            print("set data: \(service.setTXTRecord(data))")
+            service.publish()
+            runloop.run()
+        } else {
+            print("No valid IP address found.")
+        }
+       
+    }
+    
+    func extractIPAddress(from strings: [String]) -> String? {
+        let ipPattern = #"(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"#
+        let localhostIP = "127.0.0.1"
+        
+        let regex = try! NSRegularExpression(pattern: ipPattern, options: [])
+        
+        for string in strings {
+            let range = NSRange(string.startIndex..<string.endIndex, in: string)
+            let matches = regex.matches(in: string, options: [], range: range)
+            
+            for match in matches {
+                if let matchRange = Range(match.range(at: 1), in: string) {
+                    let ipAddress = String(string[matchRange])
+                    
+                    if ipAddress != localhostIP {
+                        return ipAddress
+                    }
+                }
+            }
+        }
+        
+        return nil
     }
 }
-
-
 

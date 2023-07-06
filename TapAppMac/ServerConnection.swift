@@ -50,7 +50,23 @@ class ServerConnection {
             if let data = data, !data.isEmpty {
                 let message = String(data: data, encoding: .utf8)
                 print("connection \(self.id) did receive, data: \(data as NSData) string: \(message ?? "-")")
-                self.send(data: data)
+                if(message == "1"){
+                    self.triggerKeyPress(keyCode: 36) ///Simulate enter
+                    if let res = "Done Enter".data(using: .utf8) {
+                        self.send(data: res)
+                    }
+                    
+                }else if(message == "2")
+                {
+                    self.triggerKeyPress(keyCode:48) //Simulate Tab
+                    if let res = "Done Tab".data(using: .utf8) {
+                        self.send(data: res)
+                    }
+                }else{
+                    if let res = "Command unknown".data(using: .utf8) {
+                        self.send(data: res)
+                    }
+                }
             }
             if isComplete {
                 self.connectionDidEnd()
@@ -97,4 +113,17 @@ class ServerConnection {
             didStopCallback(error)
         }
     }
+    
+    func triggerKeyPress(keyCode: CGKeyCode) {
+        let keyDownEvent = CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)
+        let keyUpEvent = CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)
+
+        if let keyDownEvent = keyDownEvent, let keyUpEvent = keyUpEvent {
+            keyDownEvent.post(tap: .cghidEventTap)
+            keyUpEvent.post(tap: .cghidEventTap)
+        }
+    }
+    
 }
+
+
