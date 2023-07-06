@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Bonjour
 
 @main
 struct TapAppMacApp: App {
@@ -29,8 +28,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     lazy var statusBarItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     let menu = ApplicationMenu()
-    
-    let bonjour = BonjourSession(configuration: .default)
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         AppDelegate.instance = self
