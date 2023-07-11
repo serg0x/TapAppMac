@@ -7,6 +7,7 @@
 
 import Foundation
 import Network
+import CoreGraphics
 
 @available(macOS 10.14, *)
 class ServerConnection {
@@ -114,9 +115,10 @@ class ServerConnection {
         }
     }
     
-    func triggerKeyPress(keyCode: CGKeyCode) {
+    func triggerKeyPress(keyCode: UInt16) {
         let keyDownEvent = CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)
         let keyUpEvent = CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: false)
+        
 
         if let keyDownEvent = keyDownEvent, let keyUpEvent = keyUpEvent {
             keyDownEvent.post(tap: .cghidEventTap)
