@@ -98,7 +98,9 @@ class Server : NSObject {
             let data = NetService.data(fromTXTRecord: dictData)
             print("set data: \(service.setTXTRecord(data))")
             service.publish()
-            runloop.run()
+            //runloop.run()
+
+            
         } else {
             print("No valid IP address found.")
         }
