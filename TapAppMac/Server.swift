@@ -90,22 +90,27 @@ class Server : NSObject {
             print(Int32(self.port.rawValue))
 
             let agent = ServiceAgent()
-            let runloop = RunLoop.main
-            let service = NetService(domain: "local.", type: "_tapapp._tcp", name: "tapApp", port: Int32(self.port.rawValue))
-            service.schedule(in: runloop, forMode: .common)
-            service.delegate = agent
-            let dictData: [String: Data] = ["ip": ipAddress.data(using: .utf8)!, "port": String(Int32(self.port.rawValue)).data(using: .utf8)!]
-            let data = NetService.data(fromTXTRecord: dictData)
-            print("set data: \(service.setTXTRecord(data))")
-            service.publish()
-            //runloop.run()
 
-            
+            DispatchQueue.global(qos: .background).async {
+                let runLoop = RunLoop.current
+                let service = NetService(domain: "local.", type: "_tapapp3._tcp", name: "tapApp3", port: Int32(self.port.rawValue))
+                service.schedule(in: runLoop, forMode: .common)
+                service.delegate = agent
+                let dictData: [String: Data] = ["ip": ipAddress.data(using: .utf8)!, "port": String(Int32(self.port.rawValue)).data(using: .utf8)!]
+                let data = NetService.data(fromTXTRecord: dictData)
+                print("set data: \(service.setTXTRecord(data))")
+                service.publish()
+                print("runloop in the background thread")
+                runLoop.run()
+                
+            }
+
         } else {
             print("No valid IP address found.")
         }
-       
     }
+    
+    
     
     func extractIPAddress(from strings: [String]) -> String? {
         let ipPattern = #"(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"#
