@@ -7,9 +7,11 @@
 
 import SwiftUI
 
+var appSettings = AppSettings()
 
 
 struct ContentView: View {
+    
 
    
     var body: some View {
@@ -18,21 +20,21 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
             
+            Text("IP Address: \(appSettings.publishedIpAddress)")
+            Text("Port: \(appSettings.publishedPort)")
+            Text("Name: \(appSettings.publishedName)")
+            Text("Status: \(appSettings.publishedStatus)")
+            
 //            Text("ID: \(id)")
 //                .padding()
 //            
 //            Text("Status: \(connectionStatus)")
 //                .padding()
 //
-//            Button("Connect", action: {
-//                communicator.connect()
-//            })
-//            Button("Send", action: {
-//                communicator.send(message: "He")
-//            })
-//            Button("Stream", action: {
-//                //communicator.stream(<#T##aStream: Stream##Stream#>, handle: <#T##Stream.Event#>)
-//            })
+            Button("Restart Server", action: {
+                try!server?.stop()
+                //try!server?.init(port: 12345 (UInt16))
+            })
 //            
 //            .padding()
         }
@@ -40,3 +42,5 @@ struct ContentView: View {
     
 
 }
+
+

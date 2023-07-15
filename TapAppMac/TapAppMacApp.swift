@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+var server: Server?
+
 @main
 struct TapAppMacApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
@@ -34,18 +36,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusBarItem.button?.title = "Tap App"
         statusBarItem.menu = menu.createMenu()
         initServer(port: 12345)
-        
-        
-        //let network = NetworkManager(host: "",port: 1234)
-        
-        
     }
+    
     
     func initServer(port: UInt16) {
         print("initializedServer0")
-        let server = Server(port: port)
+        server = Server(port: port)
         print("initializedServer1")
-        try! server.start()
+        try! server?.start()
         print("initializedServer2")
     }
     

@@ -16,7 +16,7 @@
 		893283802A56451200CC000A /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8932837F2A56451200CC000A /* Server.swift */; };
 		893283822A5645BD00CC000A /* ServerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893283812A5645BD00CC000A /* ServerConnection.swift */; };
 		89C4AE922A57215F0043EEB4 /* ServiceAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C4AE912A57215F0043EEB4 /* ServiceAgent.swift */; };
-		B79C34572A55E3FA00273482 /* Communicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79C34562A55E3FA00273482 /* Communicator.swift */; };
+		B76B63272A6000B0004A06EE /* Observables.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76B63262A6000B0004A06EE /* Observables.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 		8932837F2A56451200CC000A /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		893283812A5645BD00CC000A /* ServerConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConnection.swift; sourceTree = "<group>"; };
 		89C4AE912A57215F0043EEB4 /* ServiceAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAgent.swift; sourceTree = "<group>"; };
-		B79C34562A55E3FA00273482 /* Communicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Communicator.swift; sourceTree = "<group>"; };
+		B76B63262A6000B0004A06EE /* Observables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observables.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,10 +71,10 @@
 				75F0491D2A522A0200CA58F0 /* Assets.xcassets */,
 				75F049222A522A0200CA58F0 /* TapAppMac.entitlements */,
 				75F0491F2A522A0200CA58F0 /* Preview Content */,
-				B79C34562A55E3FA00273482 /* Communicator.swift */,
 				8932837F2A56451200CC000A /* Server.swift */,
 				893283812A5645BD00CC000A /* ServerConnection.swift */,
 				89C4AE912A57215F0043EEB4 /* ServiceAgent.swift */,
+				B76B63262A6000B0004A06EE /* Observables.swift */,
 			);
 			path = TapAppMac;
 			sourceTree = "<group>";
@@ -162,10 +162,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B79C34572A55E3FA00273482 /* Communicator.swift in Sources */,
 				75F0491C2A522A0100CA58F0 /* ContentView.swift in Sources */,
 				75F049292A522BA300CA58F0 /* ApplicationMenu.swift in Sources */,
 				893283822A5645BD00CC000A /* ServerConnection.swift in Sources */,
+				B76B63272A6000B0004A06EE /* Observables.swift in Sources */,
 				89C4AE922A57215F0043EEB4 /* ServiceAgent.swift in Sources */,
 				893283802A56451200CC000A /* Server.swift in Sources */,
 				75F0491A2A522A0100CA58F0 /* TapAppMacApp.swift in Sources */,

@@ -38,6 +38,7 @@ class Server : NSObject {
         switch newState {
         case .ready:
           print("Server ready.")
+            appSettings.publishedStatus = "Server ready."
         case .failed(let error):
             print("Server failure, error: \(error.localizedDescription)")
             exit(EXIT_FAILURE)
@@ -60,6 +61,7 @@ class Server : NSObject {
             isConnected = true
         }else{
             nwConnection.cancel()
+            appSettings.publishedStatus = "server rejected connection"
             print("server rejected connection")
         }
     }
@@ -72,7 +74,7 @@ class Server : NSObject {
         }
     }
 
-    private func stop() {
+     func stop() {
         self.listener.stateUpdateHandler = nil
         self.listener.newConnectionHandler = nil
         self.listener.cancel()
@@ -86,6 +88,11 @@ class Server : NSObject {
     
     private func registerService() {
         if let ipAddress = extractIPAddress(from: Host.current().addresses) {
+            
+            
+            appSettings.publishedIpAddress = ipAddress
+            appSettings.publishedPort = self.port.rawValue.formatted()
+            //Update UI with IP adress
             print(ipAddress)
             print(Int32(self.port.rawValue))
 
@@ -93,7 +100,8 @@ class Server : NSObject {
 
             DispatchQueue.global(qos: .background).async {
                 let runLoop = RunLoop.current
-                let service = NetService(domain: "local.", type: "_tapapp3._tcp", name: "tapApp3", port: Int32(self.port.rawValue))
+                let service = NetService(domain: "local.", type: "_tapapp._tcp", name: "tapApp", port: Int32(self.port.rawValue))
+                appSettings.publishedName = service.name
                 service.schedule(in: runLoop, forMode: .common)
                 service.delegate = agent
                 let dictData: [String: Data] = ["ip": ipAddress.data(using: .utf8)!, "port": String(Int32(self.port.rawValue)).data(using: .utf8)!]
