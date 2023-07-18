@@ -23,6 +23,7 @@ class ApplicationMenu: NSObject {
         
         let aboutMenuItem = NSMenuItem(title: "About", action: #selector(about), keyEquivalent: "")
         aboutMenuItem.target = self
+        aboutMenuItem.representedObject = "https://tap-app.webflow.io/"
         menu.addItem(aboutMenuItem)
         
         let webLinkMenuItem = NSMenuItem(title: "Link to LMU", action: #selector(openLink), keyEquivalent: "")

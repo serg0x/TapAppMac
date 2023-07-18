@@ -9,34 +9,36 @@ import SwiftUI
 
 var appSettings = AppSettings()
 
-
 struct ContentView: View {
     
 
    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
+            Image("Icon")
+            Text("Tap App").font(.headline).fontWeight(.medium).padding(4.0)
+            Text("Use your phone to connect").padding(4.0)
             
-            Text("IP Address: \(appSettings.publishedIpAddress)")
-            Text("Port: \(appSettings.publishedPort)")
-            Text("Name: \(appSettings.publishedName)")
-            Text("Status: \(appSettings.publishedStatus)")
+            HStack{
+                VStack(alignment: .leading){
+                    Text("IP Address: ")
+                    Text("Port: ")
+                    Text("Name: ")
+                    Text("Status: ")
+                }
+                VStack(alignment: .leading){
+                    Text("\(appSettings.publishedIpAddress)")
+                    Text("\(appSettings.publishedPort)")
+                    Text("\(appSettings.publishedName)")
+                    Text("\(appSettings.publishedStatus)")
+                }
+            }
             
-//            Text("ID: \(id)")
-//                .padding()
-//            
-//            Text("Status: \(connectionStatus)")
-//                .padding()
-//
-            Button("Restart Server", action: {
-                try!server?.stop()
-                //try!server?.init(port: 12345 (UInt16))
-            })
-//            
-//            .padding()
+            
+
+            Button("Stop Server", action: {
+                server?.stop()
+            }).padding(4.0)
         }
     }
     

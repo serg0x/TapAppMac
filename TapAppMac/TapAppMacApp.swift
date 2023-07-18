@@ -33,18 +33,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         AppDelegate.instance = self
-        statusBarItem.button?.title = "Tap App"
+        statusBarItem.button?.image = NSImage(named: "Icon")
         statusBarItem.menu = menu.createMenu()
         initServer(port: 12345)
     }
     
     
     func initServer(port: UInt16) {
-        print("initializedServer0")
+        print("initServer")
         server = Server(port: port)
-        print("initializedServer1")
         try! server?.start()
-        print("initializedServer2")
     }
     
     

@@ -57,11 +57,12 @@ class Server : NSObject {
             connection.start()
             self.connectionsByID[connection.id] = connection
             connection.send(data: "Welcome you are connection: \(connection.id) ".data(using: .utf8)!)
+            appSettings.publishedStatus = "Connected"
             print("server did open connection \(connection.id)")
             isConnected = true
         }else{
             nwConnection.cancel()
-            appSettings.publishedStatus = "server rejected connection"
+            appSettings.publishedStatus = "Server rejected connection"
             print("server rejected connection")
         }
     }
@@ -69,6 +70,7 @@ class Server : NSObject {
     private func connectionDidStop(_ connection: ServerConnection) {
         self.connectionsByID.removeValue(forKey: connection.id)
         print("server did close connection \(connection.id)")
+        appSettings.publishedStatus = "Server did close connection"
         if(self.connectionsByID.isEmpty){
             isConnected = false
         }
